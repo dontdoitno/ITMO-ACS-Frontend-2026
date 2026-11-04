@@ -293,6 +293,17 @@
       "status": "confirmed",
       "userId": 2,
       "id": 2
+    },
+    {
+      "restaurantId": 1,
+      "restaurantName": "Трактир «Берёзка»",
+      "date": "2026-11-18",
+      "time": "20:28",
+      "guests": "2",
+      "comment": "",
+      "status": "confirmed",
+      "userId": 3,
+      "id": 3
     }
   ],
   "users": [
@@ -307,6 +318,12 @@
       "password": "$2a$10$jJYjwbPtvRQVerxXj29poOsmvdJWTCllvF0YEkItVbeyeJJ9a1HIi",
       "name": "Виктория",
       "id": 2
+    },
+    {
+      "email": "demo@demo.ru",
+      "password": "$2a$10$MzJzCnCkLguv85dPy7kBze38UF9S.F0ap8mqaZ9P7CkHjk2eW39iW",
+      "name": "dontdoitno",
+      "id": 3
     }
   ]
 }
