@@ -19,7 +19,7 @@ async function renderRestaurant() {
       </div>
       <div class="col-lg-5">
         <h1>${restaurant.name}</h1>
-        <p class="text-muted mb-1">${restaurant.cuisine} кухня · ${restaurant.city}</p>
+        <p class="text-muted mb-1"><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-pin"></use></svg> ${restaurant.cuisine} кухня · ${restaurant.city}</p>
         <p>
           <span class="rating-stars fs-5" aria-hidden="true">${renderStars(restaurant.rating)}</span>
           <span class="text-muted">Рейтинг: ${restaurant.rating.toFixed(1)} из 5</span>

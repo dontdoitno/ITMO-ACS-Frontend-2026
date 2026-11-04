@@ -28,7 +28,7 @@ function restaurantCardHtml(r) {
         <img src="${r.img}" class="card-img-top" alt="" aria-hidden="true">
         <div class="card-body">
           <h3 class="card-title h5">${r.name}</h3>
-          <p class="card-text text-muted mb-1">${r.cuisine} · ${r.city}</p>
+          <p class="card-text text-muted mb-1"><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#icon-pin"></use></svg> ${r.cuisine} · ${r.city}</p>
           <p class="card-text">
             <span class="rating-stars" aria-hidden="true">${renderStars(r.rating)}</span>
             <span class="text-muted">${r.rating.toFixed(1)}</span>

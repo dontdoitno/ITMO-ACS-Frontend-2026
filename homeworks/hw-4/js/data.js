@@ -34,7 +34,8 @@ function renderStars(rating) {
   const full = Math.round(rating);
   let html = "";
   for (let i = 1; i <= 5; i++) {
-    html += i <= full ? "★" : "☆";
+    const filled = i <= full;
+    html += `<svg class="icon rating-star ${filled ? "rating-star-filled" : "rating-star-empty"}"><use href="icons/sprite.svg#icon-star"></use></svg>`;
   }
   return html;
 }

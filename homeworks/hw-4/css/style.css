@@ -62,8 +62,26 @@ body {
   object-fit: cover;
 }
 
+.icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: -0.125em;
+}
+
 .rating-stars {
   color: #f1a208;
+}
+
+.rating-star-filled {
+  fill: #f1a208;
+}
+
+.rating-star-empty {
+  fill: #d9d9d9;
+}
+[data-bs-theme="dark"] .rating-star-empty {
+  fill: #4a4a4a;
 }
 
 .filter-sidebar {
