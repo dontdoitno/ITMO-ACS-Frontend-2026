@@ -73,7 +73,22 @@ body {
 }
 
 .booking-history-item {
-  background-color: #fdf4f2;
+  background-color: #f6e2dc;
+}
+.booking-history-item .text-muted {
+  color: #55504f !important;
+}
+
+.cancel-btn {
+  color: #fff;
+  background-color: #a41e2d;
+  border-color: #a41e2d;
+}
+.cancel-btn:hover,
+.cancel-btn:focus {
+  color: #fff;
+  background-color: #7e1620;
+  border-color: #7e1620;
 }
 
 .status-badge-confirmed { background-color: #2e7d32; }
