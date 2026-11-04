@@ -4,6 +4,12 @@
   --bg-soft: #f1f2f4;
 }
 
+[data-bs-theme="dark"] {
+  --brand: #e2574a;
+  --brand-dark: #c0392b;
+  --bg-soft: #15181c;
+}
+
 body {
   background-color: var(--bg-soft);
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
@@ -66,6 +72,10 @@ body {
   padding: 1.25rem;
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.06);
 }
+[data-bs-theme="dark"] .filter-sidebar {
+  background: #1f2328;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.4);
+}
 
 .auth-card {
   max-width: 420px;
@@ -77,6 +87,12 @@ body {
 }
 .booking-history-item .text-muted {
   color: #55504f !important;
+}
+[data-bs-theme="dark"] .booking-history-item {
+  background-color: #3a241f;
+}
+[data-bs-theme="dark"] .booking-history-item .text-muted {
+  color: #d8c9c4 !important;
 }
 
 .cancel-btn {
@@ -115,6 +131,9 @@ footer a {
 .review-card {
   background: #fff;
   border-radius: 0.5rem;
+}
+[data-bs-theme="dark"] .review-card {
+  background: #1f2328;
 }
 
 .price-tag {
