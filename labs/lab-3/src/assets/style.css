@@ -101,33 +101,73 @@ body {
 }
 
 .booking-history-item {
-  background-color: #f6e2dc;
+  background-color: #f6f1ef;
+  border: 1px solid #e5dcd9;
 }
 .booking-history-item .text-muted {
   color: #55504f !important;
 }
 [data-bs-theme="dark"] .booking-history-item {
-  background-color: #3a241f;
+  background-color: #262320;
+  border-color: #3a3632;
 }
 [data-bs-theme="dark"] .booking-history-item .text-muted {
   color: #d8c9c4 !important;
 }
 
 .cancel-btn {
-  color: #fff;
-  background-color: #a41e2d;
-  border-color: #a41e2d;
+  color: #7e1620;
+  background-color: #fbeae9;
+  border-color: #e3a8a4;
 }
 .cancel-btn:hover,
 .cancel-btn:focus {
   color: #fff;
-  background-color: #7e1620;
-  border-color: #7e1620;
+  background-color: #a41e2d;
+  border-color: #a41e2d;
+}
+[data-bs-theme="dark"] .cancel-btn {
+  color: #f3c6c2;
+  background-color: #3a1f1f;
+  border-color: #6b3330;
+}
+[data-bs-theme="dark"] .cancel-btn:hover,
+[data-bs-theme="dark"] .cancel-btn:focus {
+  color: #fff;
+  background-color: #e2574a;
+  border-color: #e2574a;
 }
 
-.status-badge-confirmed { background-color: #2e7d32; }
-.status-badge-pending { background-color: #b06a00; }
-.status-badge-cancelled { background-color: #757575; }
+.status-badge-confirmed {
+  background-color: #e8f3e8;
+  color: #1e5121;
+  border: 1px solid #a8d3a8;
+}
+.status-badge-pending {
+  background-color: #fdf3e2;
+  color: #7a4a00;
+  border: 1px solid #ecd0a0;
+}
+.status-badge-cancelled {
+  background-color: #eef0f1;
+  color: #495057;
+  border: 1px solid #ced4da;
+}
+[data-bs-theme="dark"] .status-badge-confirmed {
+  background-color: #1f2e20;
+  color: #c3e6c4;
+  border-color: #3c5a3e;
+}
+[data-bs-theme="dark"] .status-badge-pending {
+  background-color: #352a16;
+  color: #e6c687;
+  border-color: #6b5530;
+}
+[data-bs-theme="dark"] .status-badge-cancelled {
+  background-color: #2a2d2f;
+  color: #c2c8cc;
+  border-color: #454a4e;
+}
 
 .menu-photo {
   height: 140px;
@@ -176,7 +216,6 @@ footer a {
 .alert-soft-danger {
   background-color: #fbeae9;
   border-color: #e3a8a4;
-  border-left-color: #a41e2d;
   color: #7e1620;
 }
 .alert-soft-danger .icon {
@@ -187,7 +226,6 @@ footer a {
 [data-bs-theme="dark"] .alert-soft-danger {
   background-color: #3a1f1f;
   border-color: #6b3330;
-  border-left-color: #e2574a;
   color: #f3c6c2;
 }
 [data-bs-theme="dark"] .alert-soft-danger .icon {
@@ -197,7 +235,6 @@ footer a {
 .alert-soft-success {
   background-color: #e8f3e8;
   border-color: #a8d3a8;
-  border-left-color: #2e7d32;
   color: #1e5121;
 }
 .alert-soft-success .icon {
@@ -208,7 +245,6 @@ footer a {
 [data-bs-theme="dark"] .alert-soft-success {
   background-color: #1f2e20;
   border-color: #3c5a3e;
-  border-left-color: #4caf50;
   color: #c3e6c4;
 }
 [data-bs-theme="dark"] .alert-soft-success .icon {
@@ -218,12 +254,10 @@ footer a {
 .alert-soft-warning {
   background-color: #fdf3e2;
   border-color: #ecd0a0;
-  border-left-color: #b06a00;
   color: #7a4a00;
 }
 [data-bs-theme="dark"] .alert-soft-warning {
   background-color: #352a16;
   border-color: #6b5530;
-  border-left-color: #d89a3a;
   color: #e6c687;
 }

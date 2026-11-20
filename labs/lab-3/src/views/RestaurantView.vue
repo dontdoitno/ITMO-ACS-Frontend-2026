@@ -138,10 +138,11 @@ onMounted(() => {
       <BookingModal :restaurant="restaurant" @booked="showToast" />
 
       <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div ref="toastEl" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div ref="toastEl" class="toast align-items-center alert-soft alert-soft-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
           <div class="d-flex">
+            <AppIcon name="icon-check-circle" class="ms-2 mt-2" />
             <div class="toast-body">Столик успешно забронирован! Подробности — в личном кабинете.</div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Закрыть уведомление"></button>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Закрыть уведомление"></button>
           </div>
         </div>
       </div>
