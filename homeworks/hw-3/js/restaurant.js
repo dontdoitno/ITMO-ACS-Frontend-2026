@@ -8,7 +8,11 @@ async function renderRestaurant() {
   const restaurant = await fetchRestaurantById(getIdFromUrl());
   const root = document.getElementById("restaurant-root");
   if (!restaurant) {
-    root.innerHTML = '<div class="alert alert-danger" role="alert">Ресторан не найден. <a href="index.html">Вернуться к поиску</a></div>';
+    root.innerHTML = `
+      <div class="alert-soft alert-soft-danger" role="alert">
+        <svg class="alert-soft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16" x2="12" y2="16.01"/></svg>
+        <span>Ресторан не найден. <a href="index.html">Вернуться к поиску</a></span>
+      </div>`;
     return;
   }
 
@@ -123,7 +127,7 @@ function setupBookingModal() {
       form.reset();
       new bootstrap.Toast(document.getElementById("booking-toast")).show();
     } catch (err) {
-      errorBox.textContent = "Не удалось создать бронирование. Попробуйте войти в аккаунт снова.";
+      document.getElementById("booking-error-text").textContent = "Не удалось создать бронирование. Попробуйте войти в аккаунт снова.";
       errorBox.classList.remove("d-none");
     }
   });

@@ -1,5 +1,6 @@
 <script setup>
 import { computed, onMounted, ref } from "vue";
+import AppIcon from "../components/AppIcon.vue";
 import FilterSidebar from "../components/FilterSidebar.vue";
 import RestaurantCard from "../components/RestaurantCard.vue";
 import { useAsync } from "../composables/useAsync";
@@ -29,25 +30,27 @@ onMounted(async () => {
     </div>
   </section>
 
-  <main class="container my-5">
+  <main class="container my-5" id="main-content">
     <div class="row g-4">
       <div class="col-lg-3">
         <FilterSidebar :cuisines="cuisines" :cities="cities" @apply="applyFilters" />
       </div>
 
       <div class="col-lg-9">
+        <h2 class="visually-hidden">Результаты поиска ресторанов</h2>
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-muted">
+          <span class="text-muted" role="status" aria-live="polite">
             <template v-if="restaurants">Найдено ресторанов: {{ restaurants.length }}</template>
           </span>
         </div>
-        <div class="row g-4">
+        <div class="row g-4" aria-label="Список ресторанов">
           <RestaurantCard v-for="r in restaurants" :key="r.id" :restaurant="r" />
         </div>
-        <div v-if="error" class="alert alert-warning">
+        <div v-if="error" class="alert-soft alert-soft-danger" role="status" aria-live="polite">
+          <AppIcon name="icon-alert-circle" />
           Не удалось загрузить рестораны. Проверьте, что запущен мок-сервер API.
         </div>
-        <div v-else-if="restaurants && restaurants.length === 0" class="alert alert-warning">
+        <div v-else-if="restaurants && restaurants.length === 0" class="alert-soft alert-soft-warning" role="status" aria-live="polite">
           По вашему запросу ничего не найдено.
         </div>
       </div>

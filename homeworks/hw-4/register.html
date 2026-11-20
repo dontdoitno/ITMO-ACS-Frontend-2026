@@ -65,7 +65,10 @@
           <label class="form-check-label" for="r-terms">Я согласен с условиями использования</label>
           <div class="invalid-feedback" id="r-terms-feedback">Необходимо согласие с условиями.</div>
         </div>
-        <div id="register-error" class="alert alert-danger d-none" role="alert" aria-live="assertive"></div>
+        <div id="register-error" class="alert-soft alert-soft-danger d-none" role="alert" aria-live="assertive">
+          <svg class="alert-soft-icon" aria-hidden="true"><use href="icons/sprite.svg#icon-alert-circle"></use></svg>
+          <span id="register-error-text"></span>
+        </div>
         <button type="submit" class="btn btn-brand w-100">Зарегистрироваться</button>
       </form>
       <p class="text-center mt-3 mb-0">

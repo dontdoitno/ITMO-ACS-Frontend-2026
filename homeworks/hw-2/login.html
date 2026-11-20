@@ -45,7 +45,10 @@
           <input type="password" class="form-control" id="l-password" minlength="4" required aria-describedby="l-password-feedback">
           <div class="invalid-feedback" id="l-password-feedback">Пароль должен содержать не менее 4 символов.</div>
         </div>
-        <div id="login-error" class="alert alert-danger d-none" role="alert" aria-live="assertive"></div>
+        <div id="login-error" class="alert-soft alert-soft-danger d-none" role="alert" aria-live="assertive">
+          <svg class="alert-soft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16" x2="12" y2="16.01"/></svg>
+          <span id="login-error-text"></span>
+        </div>
         <button type="submit" class="btn btn-brand w-100">Войти</button>
       </form>
       <p class="text-center mt-3 mb-0">

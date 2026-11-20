@@ -25,29 +25,29 @@ function reset() {
 
 <template>
   <div class="filter-sidebar">
-    <h2 class="h5 mb-3">Фильтры</h2>
-    <form @submit.prevent="submit">
+    <h2 class="h5 mb-3" id="filters-heading">Фильтры</h2>
+    <form @submit.prevent="submit" aria-labelledby="filters-heading">
       <div class="mb-3">
-        <label class="form-label">Название</label>
-        <input type="text" class="form-control" v-model="filters.name" placeholder="Например, Sakura">
+        <label class="form-label" for="f-name">Название</label>
+        <input type="text" class="form-control" id="f-name" v-model="filters.name" placeholder="Например, Sakura">
       </div>
       <div class="mb-3">
-        <label class="form-label">Кухня</label>
-        <select class="form-select" v-model="filters.cuisine">
+        <label class="form-label" for="f-cuisine">Кухня</label>
+        <select class="form-select" id="f-cuisine" v-model="filters.cuisine">
           <option value="">Любая</option>
           <option v-for="c in cuisines" :key="c" :value="c">{{ c }}</option>
         </select>
       </div>
       <div class="mb-3">
-        <label class="form-label">Расположение</label>
-        <select class="form-select" v-model="filters.city">
+        <label class="form-label" for="f-city">Расположение</label>
+        <select class="form-select" id="f-city" v-model="filters.city">
           <option value="">Любое</option>
           <option v-for="c in cities" :key="c" :value="c">{{ c }}</option>
         </select>
       </div>
       <div class="mb-3">
-        <label class="form-label">Цена</label>
-        <select class="form-select" v-model="filters.price">
+        <label class="form-label" for="f-price">Цена</label>
+        <select class="form-select" id="f-price" v-model="filters.price">
           <option value="">Любая</option>
           <option value="1">$ — Бюджетно</option>
           <option value="2">$$ — Средне</option>
@@ -56,7 +56,7 @@ function reset() {
         </select>
       </div>
       <button type="submit" class="btn btn-brand w-100">Применить</button>
-      <button type="button" class="btn btn-outline-secondary w-100 mt-2" @click="reset">Сбросить</button>
+      <button type="button" id="f-reset" class="btn btn-outline-secondary w-100 mt-2" @click="reset">Сбросить</button>
     </form>
   </div>
 </template>

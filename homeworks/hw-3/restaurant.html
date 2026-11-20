@@ -54,7 +54,10 @@
           <div id="booking-login-warning" class="alert alert-info d-none" role="status">
             Чтобы забронировать столик, <a href="login.html">войдите в аккаунт</a>.
           </div>
-          <div id="booking-error" class="alert alert-danger d-none" role="alert" aria-live="assertive"></div>
+          <div id="booking-error" class="alert-soft alert-soft-danger d-none" role="alert" aria-live="assertive">
+            <svg class="alert-soft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16" x2="12" y2="16.01"/></svg>
+            <span id="booking-error-text"></span>
+          </div>
           <div class="mb-3">
             <label class="form-label" for="b-date">Дата</label>
             <input type="date" class="form-control" id="b-date" required>
@@ -83,10 +86,13 @@
 
 <!-- Toast об успешном бронировании -->
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="booking-toast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+  <div id="booking-toast" class="toast align-items-center alert-soft-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
-      <div class="toast-body">Столик успешно забронирован! Подробности — в личном кабинете.</div>
-      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Закрыть уведомление"></button>
+      <div class="toast-body d-flex align-items-start gap-2">
+        <svg class="alert-soft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="8 12 11 15 16 9"/></svg>
+        <span>Столик успешно забронирован! Подробности — в личном кабинете.</span>
+      </div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Закрыть уведомление"></button>
     </div>
   </div>
 </div>

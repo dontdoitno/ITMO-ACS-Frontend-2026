@@ -30,7 +30,11 @@ async function renderProfile() {
   } catch (err) {
     // json-server-auth возвращает ошибку вместо [] когда у владельца ещё нет записей
     if (!/owner id/.test(err.message)) {
-      root.innerHTML = '<div class="alert alert-danger">Не удалось загрузить бронирования. Проверьте, что запущен мок-сервер API, и попробуйте войти снова.</div>';
+      root.innerHTML = `
+        <div class="alert-soft alert-soft-danger">
+          <svg class="alert-soft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16" x2="12" y2="16.01"/></svg>
+          <span>Не удалось загрузить бронирования. Проверьте, что запущен мок-сервер API, и попробуйте войти снова.</span>
+        </div>`;
       return;
     }
   }
@@ -54,7 +58,7 @@ async function renderProfile() {
               <div class="card-body d-flex justify-content-between align-items-start">
                 <div>
                   <h3 class="h6 mb-1">${b.restaurantName}</h3>
-                  <p class="mb-1 text-muted">${b.date} в ${b.time} · ${b.guests} гостей</p>
+                  <p class="mb-1 text-muted">${formatDate(b.date)} в ${b.time} · ${b.guests} гостей</p>
                   ${b.comment ? `<p class="mb-0 small">Комментарий: ${b.comment}</p>` : ""}
                 </div>
                 <div class="text-end">

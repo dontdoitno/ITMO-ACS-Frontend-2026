@@ -1,4 +1,6 @@
 <script setup>
+import { formatDate } from "../utils/formatDate";
+
 defineProps({
   booking: { type: Object, required: true }
 });
@@ -29,14 +31,15 @@ function statusLabel(status) {
     <div class="card-body d-flex justify-content-between align-items-start">
       <div>
         <h3 class="h6 mb-1">{{ booking.restaurantName }}</h3>
-        <p class="mb-1 text-muted">{{ booking.date }} в {{ booking.time }} · {{ booking.guests }} гостей</p>
+        <p class="mb-1 text-muted">{{ formatDate(booking.date) }} в {{ booking.time }} · {{ booking.guests }} гостей</p>
         <p v-if="booking.comment" class="mb-0 small">Комментарий: {{ booking.comment }}</p>
       </div>
       <div class="text-end">
         <span class="badge mb-2" :class="statusBadgeClass(booking.status)">{{ statusLabel(booking.status) }}</span><br>
         <button
           v-if="booking.status !== 'cancelled'"
-          class="btn btn-sm btn-outline-danger"
+          class="btn btn-sm cancel-btn"
+          :aria-label="`Отменить бронирование ${booking.restaurantName} на ${formatDate(booking.date)}`"
           @click="emit('cancel', booking.id)"
         >Отменить</button>
       </div>

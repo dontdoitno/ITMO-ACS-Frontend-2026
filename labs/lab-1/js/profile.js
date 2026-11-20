@@ -45,7 +45,7 @@ function renderProfile() {
               <div class="card-body d-flex justify-content-between align-items-start">
                 <div>
                   <h3 class="h6 mb-1">${b.restaurantName}</h3>
-                  <p class="mb-1 text-muted">${b.date} в ${b.time} · ${b.guests} гостей</p>
+                  <p class="mb-1 text-muted">${formatDate(b.date)} в ${b.time} · ${b.guests} гостей</p>
                   ${b.comment ? `<p class="mb-0 small">Комментарий: ${b.comment}</p>` : ""}
                 </div>
                 <div class="text-end">

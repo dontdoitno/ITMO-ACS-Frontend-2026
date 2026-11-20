@@ -61,7 +61,7 @@ function setupRegisterForm() {
 
     const users = getUsers();
     if (users.some((u) => u.email === email)) {
-      errorBox.textContent = "Пользователь с таким email уже зарегистрирован.";
+      document.getElementById("register-error-text").textContent = "Пользователь с таким email уже зарегистрирован.";
       errorBox.classList.remove("d-none");
       return;
     }

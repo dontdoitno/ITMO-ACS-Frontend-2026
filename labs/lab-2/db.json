@@ -282,6 +282,17 @@
       "status": "confirmed",
       "userId": 1,
       "id": 1
+    },
+    {
+      "restaurantId": 1,
+      "restaurantName": "Трактир «Берёзка»",
+      "date": "2026-12-01",
+      "time": "19:00",
+      "guests": "2",
+      "comment": "Столик у окна",
+      "status": "confirmed",
+      "userId": 2,
+      "id": 2
     }
   ],
   "users": [
@@ -290,6 +301,18 @@
       "password": "$2a$10$wfK7POM0T33nlSWG7YTR/ujXrCexTTkC7PKcVw5y0AP/l.4jENAgu",
       "name": "dontdoitno",
       "id": 1
+    },
+    {
+      "email": "vika@example.com",
+      "password": "$2a$10$jJYjwbPtvRQVerxXj29poOsmvdJWTCllvF0YEkItVbeyeJJ9a1HIi",
+      "name": "Виктория",
+      "id": 2
+    },
+    {
+      "email": "admin@mail.ru",
+      "password": "$2a$10$TuapoUIbuYVTpKCDViXtZenYN1gwyuyZ9UBUdIttCKdBoJmoJDN0e",
+      "name": "admin",
+      "id": 3
     }
   ]
 }

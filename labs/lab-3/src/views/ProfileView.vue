@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted } from "vue";
+import AppIcon from "../components/AppIcon.vue";
 import BookingHistoryItem from "../components/BookingHistoryItem.vue";
 import { useAuth } from "../composables/useAuth";
 import { useAsync } from "../composables/useAsync";
@@ -27,8 +28,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="container my-5">
-    <div v-if="!user" class="alert alert-info text-center">
+  <main class="container my-5" id="main-content">
+    <div v-if="!user" class="alert alert-info text-center" role="status">
       Чтобы увидеть личный кабинет, пожалуйста, <router-link to="/login">войдите</router-link> или
       <router-link to="/register">зарегистрируйтесь</router-link>.
     </div>
@@ -44,10 +45,11 @@ onMounted(() => {
       </div>
       <div class="col-lg-8">
         <h2 class="h4 mb-3">История бронирований</h2>
-        <div v-if="error" class="alert alert-danger">
+        <div v-if="error" class="alert-soft alert-soft-danger" role="alert" aria-live="assertive">
+          <AppIcon name="icon-alert-circle" />
           Не удалось загрузить бронирования. Проверьте, что запущен мок-сервер API, и попробуйте войти снова.
         </div>
-        <template v-else>
+        <div v-else role="status" aria-live="polite">
           <BookingHistoryItem
             v-for="b in bookings"
             :key="b.id"
@@ -57,7 +59,7 @@ onMounted(() => {
           <p v-if="bookings && bookings.length === 0" class="text-muted">
             У вас пока нет бронирований. <router-link to="/">Найти ресторан</router-link>
           </p>
-        </template>
+        </div>
       </div>
     </div>
   </main>

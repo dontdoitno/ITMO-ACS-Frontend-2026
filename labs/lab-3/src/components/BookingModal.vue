@@ -1,6 +1,7 @@
 <script setup>
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
+import AppIcon from "./AppIcon.vue";
 import { useAuth } from "../composables/useAuth";
 import { useAsync } from "../composables/useAsync";
 import { createBooking } from "../api/bookings";
@@ -51,34 +52,37 @@ function onMounted(el) {
 </script>
 
 <template>
-  <div class="modal fade" id="bookingModal" tabindex="-1" aria-hidden="true" :ref="(el) => el && onMounted(el)">
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-hidden="true" aria-labelledby="bookingModalTitle" :ref="(el) => el && onMounted(el)">
     <div class="modal-dialog">
       <div class="modal-content">
         <form @submit.prevent="submit">
           <div class="modal-header">
-            <h5 class="modal-title">Бронирование столика</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            <h2 class="modal-title h5" id="bookingModalTitle">Бронирование столика</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть окно бронирования"></button>
           </div>
           <div class="modal-body">
-            <div v-if="!user" class="alert alert-info">
+            <div v-if="!user" class="alert alert-info" role="status">
               Чтобы забронировать столик, <router-link to="/login">войдите в аккаунт</router-link>.
             </div>
-            <div v-if="error" class="alert alert-danger">{{ error }}</div>
-            <div class="mb-3">
-              <label class="form-label">Дата</label>
-              <input type="date" class="form-control" v-model="form.date" required>
+            <div v-if="error" class="alert-soft alert-soft-danger" role="alert" aria-live="assertive">
+              <AppIcon name="icon-alert-circle" />
+              {{ error }}
             </div>
             <div class="mb-3">
-              <label class="form-label">Время</label>
-              <input type="time" class="form-control" v-model="form.time" required>
+              <label class="form-label" for="b-date">Дата</label>
+              <input type="date" class="form-control" id="b-date" v-model="form.date" required>
             </div>
             <div class="mb-3">
-              <label class="form-label">Количество гостей</label>
-              <input type="number" class="form-control" v-model.number="form.guests" min="1" max="20" required>
+              <label class="form-label" for="b-time">Время</label>
+              <input type="time" class="form-control" id="b-time" v-model="form.time" required>
             </div>
             <div class="mb-3">
-              <label class="form-label">Комментарий</label>
-              <textarea class="form-control" v-model="form.comment" rows="2" placeholder="Например: столик у окна"></textarea>
+              <label class="form-label" for="b-guests">Количество гостей</label>
+              <input type="number" class="form-control" id="b-guests" v-model.number="form.guests" min="1" max="20" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="b-comment">Комментарий</label>
+              <textarea class="form-control" id="b-comment" v-model="form.comment" rows="2" placeholder="Например: столик у окна"></textarea>
             </div>
           </div>
           <div class="modal-footer">

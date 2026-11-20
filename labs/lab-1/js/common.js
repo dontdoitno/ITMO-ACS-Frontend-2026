@@ -1,4 +1,28 @@
 // Общая логика шапки сайта: показывает "Вход/Регистрация" или имя пользователя
+
+// Форматирует дату в стандартный для РФ вид ДД.ММ.ГГГГ
+function formatDate(dateStr) {
+  if (!dateStr) return "";
+  const isoMatch = /^(\d{4})-(\d{2})-(\d{2})/.exec(dateStr);
+  if (isoMatch) {
+    const [, year, month, day] = isoMatch;
+    return `${day}.${month}.${year}`;
+  }
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return dateStr;
+  const day = String(d.getDate()).padStart(2, "0");
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const year = d.getFullYear();
+  return `${day}.${month}.${year}`;
+}
+
+// Форматирует дату и время в вид ДД.ММ.ГГГГ, ЧЧ:ММ
+function formatDateTime(dateStr, timeStr) {
+  const datePart = formatDate(dateStr);
+  if (!timeStr) return datePart;
+  return `${datePart}, ${timeStr}`;
+}
+
 function currentUser() {
   const raw = localStorage.getItem("tablebook_user");
   return raw ? JSON.parse(raw) : null;

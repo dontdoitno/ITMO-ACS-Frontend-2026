@@ -24,7 +24,7 @@ function setupLoginForm() {
       setSession(data.accessToken, { name: data.user.name, email: data.user.email, id: data.user.id });
       window.location.href = "profile.html";
     } catch (err) {
-      errorBox.textContent = "Неверный email или пароль.";
+      document.getElementById("login-error-text").textContent = "Неверный email или пароль.";
       errorBox.classList.remove("d-none");
     }
   });
@@ -59,7 +59,7 @@ function setupRegisterForm() {
       setSession(data.accessToken, { name: data.user.name, email: data.user.email, id: data.user.id });
       window.location.href = "profile.html";
     } catch (err) {
-      errorBox.textContent = "Пользователь с таким email уже зарегистрирован.";
+      document.getElementById("register-error-text").textContent = "Пользователь с таким email уже зарегистрирован.";
       errorBox.classList.remove("d-none");
     }
   });

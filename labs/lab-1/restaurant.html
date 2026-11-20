@@ -70,10 +70,13 @@
 
 <!-- Toast об успешном бронировании -->
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="booking-toast" class="toast align-items-center text-bg-success border-0" role="alert">
+  <div id="booking-toast" class="toast align-items-center alert-soft-success border-0" role="alert">
     <div class="d-flex">
-      <div class="toast-body">Столик успешно забронирован! Подробности — в личном кабинете.</div>
-      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      <div class="toast-body d-flex align-items-start gap-2">
+        <svg class="alert-soft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="8 12 11 15 16 9"/></svg>
+        <span>Столик успешно забронирован! Подробности — в личном кабинете.</span>
+      </div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"></button>
     </div>
   </div>
 </div>
